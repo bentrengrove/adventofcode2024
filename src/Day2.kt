@@ -43,5 +43,15 @@ private fun List<Int>.isSafe(): Boolean {
 }
 
 private fun List<Int>.isSafeDampened(): Boolean {
-    return isSafe()
+    if (isSafe()) return true
+
+    forEachIndexed { index, i ->
+        val testList = this.toMutableList()
+        testList.removeAt(index)
+        if (testList.isSafe()) {
+            return true
+        }
+    }
+
+    return false
 }
