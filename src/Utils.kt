@@ -25,3 +25,17 @@ fun checkInt(input: Int, expected: Int) {
         error("Expected $expected but was $input")
     }
 }
+
+fun List<Int>.middle(): Int = this[this.size / 2]
+
+fun <T> List<T>.indexOfOrNull(element: T): Int? {
+    val index = this.indexOf(element)
+    if (index == -1) return null
+    return index
+}
+
+fun <T> MutableList<T>.swap(firstIndex: Int, secondIndex: Int) {
+    val tmp = this[firstIndex]
+    this[firstIndex] = this[secondIndex]
+    this[secondIndex] = tmp
+}
