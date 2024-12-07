@@ -26,6 +26,12 @@ fun checkInt(input: Int, expected: Int) {
     }
 }
 
+fun checkLong(input: Long, expected: Long) {
+    if (input != expected) {
+        error("Expected $expected but was $input")
+    }
+}
+
 fun List<Int>.middle(): Int = this[this.size / 2]
 
 fun <T> List<T>.indexOfOrNull(element: T): Int? {

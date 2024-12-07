@@ -29,7 +29,7 @@ fun main() {
     part2(input).println()
 }
 
-data class Input(
+private data class Input(
     val orderRules: List<Pair<Int, Int>>,
     val pages: List<List<Int>>
 )
