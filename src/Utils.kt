@@ -97,3 +97,7 @@ fun interpolatePoints(p1: Pair<Int, Int>, p2: Pair<Int, Int>): List<Pair<Int, In
 
     return listOf(Pair(newX1, newY1), Pair(newX2, newY2))
 }
+
+fun List<CharArray>.get(pair: Pair<Int, Int>): Char? {
+    return this.getOrNull(pair.second)?.getOrNull(pair.first)
+}
